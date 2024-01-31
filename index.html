@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<h1 style="color: white;">WELCOME!</h1>
+  <h1 style="color: blue;">TO THE PROGRAM! WERE IN BETA FOR NOW VERSION V3 </h1>
+
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Key System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      #content {
+        display: none;
+      }
+
+      .access-granted {
+        color: green;
+        font-weight: bold;
+      }
+
+      .access-denied {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="content">
+      <h1>Welcome to the Secure System</h1>
+    </div>
+    <script>
+      (function () {
+        function c() {
+          if (localStorage.getItem("hiwid_key_used")) {
+            d("content").style.display = "block";
+            d("content").classList.add("access-granted");
+            d("content").innerHTML = '<h1 class="access-granted">Access Granted!</h1>';
+            return;
+          }
+
+          console.log("Enter the secret key:");
+
+          var a = window.prompt("Enter the secret key:");
+
+          if (a === null || a === "" || !Array.from({ length: 20 }, (_, i) => `NOSKID${i + 1}`).includes(a)) {
+            // Invalid key or cancelled
+            d("content").classList.add("access-denied");
+            d("content").innerHTML = '<h1 class="access-denied">Access Denied!</h1>';
+            // Set both page and link to about:blank
+            window.location.href = 'about:blank';
+          } else {
+            // Correct key
+            localStorage.setItem("hiwid_key_used", "true");
+            d("content").style.display = "block";
+            d("content").classList.add("access-granted");
+            d("content").innerHTML = '<h1 class="access-granted">Access Granted!</h1>';
+          }
+        }
+
+        function d(a) {
+          return document.getElementById(a);
+        }
+
+        c();
+      })();
+    </script>
+  </body>
+
+
+
+
+
+
+
+
+
+  <head>
+  </head>
+
+
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url('https://i.pinimg.com/originals/5f/39/c7/5f39c79d36eca47755d2744dbb7c4d01.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your content goes here -->
+  </body>
+  </html>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ff0000;
+      text-align: center;
+    }
+
+    button {
+      background-color: #ff0000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #ff0000;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="navigateTolink()">Links use in inter</button>
+
+  <script>
+    function navigateTolink() {
+      window.location.href = 'gam/fort.html';
+    }
+  </script>
+
+  <button onclick="navigateToInter()">inter</button>
+
+  <script>
+    function navigateToInter() {
+      window.location.href = 'gam/enter/Scooby.html';
+    }
+  </script>
+
+   <button onclick="navigateToData()">Data Saver</button>
+
+   <script>
+     function navigateToData() {
+       window.location.href = 'gam/DataSaver.html';
+     }
+   </script>
+
+
+  <button onclick="navigateToGETOVERIT()">Message For Kevin and groups</button>
+
+   <script>
+     function navigateToGETOVERIT() {
+       window.location.href = 'gam/NOSKID.html';
+     }
+   </script>
+
+  <button onclick="navigateToDOGE()">updates</button>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Music</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #controls {
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<audio id="backgroundMusic" loop>
+  <source src="" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+
+<div id="controls">
+  <label for="songSelector">Select a Song:</label>
+  <select id="songSelector">
+    <option value="music.mp3">Your are going down!</option>
+    <option value="I’m So Sorry.mp3"> Im So Sorry</option>
+    <option value="Red.mp3"> The Red Hood</option>
+    <!-- Add more options for additional songs -->
+  </select>
+  <button onclick="playMusic()">Play Background Music</button>
+  <button onclick="stopMusic()">Stop Music</button>
+</div>
+
+<script>
+  const backgroundMusic = document.getElementById('backgroundMusic');
+  const songSelector = document.getElementById('songSelector');
+
+  function playMusic() {
+    // Set the source of the audio element to the selected song
+    backgroundMusic.src = songSelector.value;
+    backgroundMusic.play();
+  }
+
+  function stopMusic() {
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0;
+  }
+</script>
+
+</body>
+</html>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Users Counter</title>
+</head>
+<body>
+
+<h1>Online Users Counter</h1>
+<p id="onlineUsers">Number of online users: <span id="count">0</span></p>
+
+<script>
+  // WebSocket connection
+  const socket = new WebSocket('wss://' + location.host);
+
+  // Counter for online users
+  let onlineCount = 0;
+
+  // Update the online users count when a new user connects
+  socket.addEventListener('open', () => {
+    console.log('WebSocket connection opened');
+  });
+
+  // Update the online users count when a user disconnects
+  socket.addEventListener('close', () => {
+    console.log('WebSocket connection closed');
+  });
+
+  // Listen for messages from the server to update the count
+  socket.addEventListener('message', (event) => {
+    const data = JSON.parse(event.data);
+
+    if (data.type === 'userCount') {
+      updateOnlineUsersCount(data.count);
+    }
+  });
+
+  // Function to update the online users count on the page
+  function updateOnlineUsersCount(count) {
+    onlineCount = count;
+    document.getElementById('count').innerText = onlineCount;
+  }
+</script>
+
+</body>
+
+
+
+
+  
+
+
+
+
+
+
+</html>
